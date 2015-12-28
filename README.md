@@ -2,6 +2,10 @@
 
 > Alternative to HTML5 range (slider) inspired by DAWs, kinda like dials. Audials.
 
+> Some very easy to achieve styles (the third is not wrong, its range is -50..60). You'll find the HTML / JavaScript required to achieve these in usage.html:
+
+> ![Audials Styles](styles.png?raw=true "Audials Styles")
+
 ## Usage
 
 There are four usage types corresponding to two functionality styles and two display styles.
@@ -87,6 +91,14 @@ See [Known Issues](#known-issues) for details regarding the *zeroModifiers* opti
 <!-- -->
 
 > Touch modifiers are slightly different. The sensitivity of the dial is multiplied by the number of touches detected. Modifier touches can be added while moving the dial by using your other hand for example. Touch modifiers are detected anywhere on the screen.
+
+## Pipeline
+
+> The value display will be given more options. The value won't be readable on smaller dials so a hover option will be introduced.
+
+<!-- -->
+
+> The modifiers still may not be sensitive enough in some cases. A control for Hz for example will typically range from 20..20000. The current modifiers seem ideal for smaller ranges so an additional option will soon be added so that all modifiers can be amplified to suit the range option and also the UI. This will also be implemented so that the dials can also be made less sensitive.
 
 ## Known issues
 

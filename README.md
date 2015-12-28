@@ -71,7 +71,7 @@ The first argument when instantiating TkAudial is its HTML container element. Th
   valueColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   valueFontSize: (String) Style value (EG 1.2em, 22px, 12pt, 90%). Default is 1em,
   inputId: (String) used for name and id of a hidden form input. Input is not generated if this option is omitted,
-  zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial
+  zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial. Default is false
 }
 ```
 See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.

@@ -66,9 +66,11 @@ The first argument when instantiating TkAudial is its HTML container element. Th
   valueBackgroundColour:  (String) Style value (EG white, #, rgb, rgba). Default is black,
   valueColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   valueFontSize: (String) Style value (EG 1.2em, 22px, 12pt, 90%). Default is 1em,
-  inputId: (String) used for name and id of a hidden form input. Input is not generated if this option is omitted
+  inputId: (String) used for name and id of a hidden form input. Input is not generated if this option is omitted,
+  zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial
 }
 ```
+See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.
 
 ## Events
 
@@ -82,8 +84,18 @@ The first argument when instantiating TkAudial is its HTML container element. Th
 
 > For large ranges it may be useful to use the alt and shift modifiers which double and treble the sensitivity of the dial. They are also cumulative so using both would sextuple the sensitivity. Using the modifiers will reduce accuracy but they can be triggered mid-drag so you can use them to quickly get close to where you need to be then release them to achieve the precise value you need.
 
+<!-- -->
+
+> Touch modifiers are slightly different. The sensitivity of the dial is multiplied by the number of touches detected. Modifier touches can be added while moving the dial by using your other hand for example. Touch modifiers are detected anywhere on the screen.
+
 ## Known issues
 
 > Selection of the control value as text when the control is not in use proved flaky. Especially in Safari. To select the text value of the control, start the selection outside the control. This works well enough on desktop. On iOS text selection causes a slight issue. Just touch and hold to select the text, this is fine. Starting the dial manipulation from the text though doesn't seem to set the text as non-selectable as well as desktop does. In this case the dial needs to be manipulated by its edges. Text selection is probably not particularly useful and this may soon all be avoided by have the control non-selectable at all times.
 
-> Safari desktop doesn't completely agree with the modifiers. It's not fatal but it seems to get jumpy when triggering them sometimes.
+<!-- -->
+
+> Safari on both desktop and iOS doesn't seem to completely get along with the modifiers. It's not fatal but it seems to get jumpy when triggering them sometimes.
+
+<!-- -->
+
+> For touch devices, touch mashing, or perhaps a cpu struggling device, can result in the touch count getting out of sync. This seems to be rare though. This may be dealt with by setting the touch count for a dial to zero when it is released. The *zeroModifiers* options has been added for this purpose. If this option is set to true, modifiers would have to be re-applied before or during manipulation of a dial. If you suspect modifier count sync is proving to be an issue, this can be applied.

@@ -99,6 +99,10 @@ Number type options are rounded to two decimal places. The initial value is roun
 
 > The modifiers still may not be sensitive enough in some cases. A control for Hz for example will typically range from 20..20000. The current modifiers seem ideal for smaller ranges so an additional option will soon be added so that all modifiers can be amplified to suit the range option and also the UI. This will also be implemented so that the dials can also be made less sensitive.
 
+<!-- -->
+
+> Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop.
+
 ## Known issues
 
 > Selection of the control value as text when the control is not in use proved flaky. Especially in Safari. To select the text value of the control, start the selection outside the control. This works well enough on desktop. On iOS text selection causes a slight issue. Just touch and hold to select the text, this is fine. Starting the dial manipulation from the text though doesn't seem to set the text as non-selectable as well as desktop does. In this case the dial needs to be manipulated by its edges. Text selection is probably not particularly useful and this may soon all be avoided by have the control non-selectable at all times.

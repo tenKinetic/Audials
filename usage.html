@@ -50,9 +50,9 @@
 	<div class="panel">
 		<div id="style-4" class="tk-audial"></div>
 	</div>
-	<p style="clear:both;padding:10px 0;">
-		These were inspired by controls in audio software, hence the audio terms used to describe the functional types.
-	</p>
+	<div class="panel">
+		<div id="style-5" class="tk-audial"></div>
+	</div>
 	<script>
 		var gainNotch = document.querySelector('#gain-notch');
 		var balanceNotch = document.querySelector('#balance-notch');
@@ -64,17 +64,19 @@
 		var balanceFillDial = new TkAudial(balanceFill, {type:'balance',display:'fill',min:-50,max:50,value:12,inputId:'unique-id'});
 
 		var style1 = document.querySelector('#style-1');
-		var style1Dial = new TkAudial(style1, {type:'gain',display:'notch',min:0.8,max:6.3,step:0.1,value:120,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'white',inputId:'dial-1-input'})
+		var style1Dial = new TkAudial(style1, {type:'gain',display:'notch',min:0.8,max:6.3,step:0.1,value:120,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'white',inputId:'dial-1-input'});
 
 		var style2 = document.querySelector('#style-2');
-		var style2Dial = new TkAudial(style2, {type:'gain',display:'fill',min:20,max:20000,value:15000,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(255,100,180,0.5)',valueBackgroundColour:'white',valueColour:'rgba(255,100,180,0.5)',valueFontSize:'0.6em',inputId:'dial-2-input'})
+		var style2Dial = new TkAudial(style2, {type:'gain',display:'fill',min:20,max:20000,value:15000,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(255,100,180,0.5)',valueBackgroundColour:'white',valueColour:'rgba(255,100,180,0.5)',valueFontSize:'0.6em',inputId:'dial-2-input'});
 
 		var style3 = document.querySelector('#style-3');
-		var style3Dial = new TkAudial(style3, {type:'balance',display:'notch',min:-50,max:60,step:5,value:0,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'orange	',indicatorColour:'yellow',valueBackgroundColour:'grey',valueColour:'rgba(255,255,255,0.85)',inputId:'dial-3-input'})
+		var style3Dial = new TkAudial(style3, {type:'balance',display:'notch',min:-50,max:60,step:5,value:0,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'orange	',indicatorColour:'yellow',valueBackgroundColour:'grey',valueColour:'rgba(255,255,255,0.85)',inputId:'dial-3-input',enableClipboard:true});
 
 		var style4 = document.querySelector('#style-4');
-		var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input'})
+		var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input',enableClipboard:true});
 
+		var style5 = document.querySelector('#style-5');
+		var style5Dial = new TkAudial(style5, {type:'gain',display:'fill',min:0,max:200,step:10,value:180,borderWidth:20,borderColour:'#dddddd',borderWidth:0,indicatorWidth:20,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(120,180,220,0.6)',valueBackgroundColour:'#dddddd',valueColour:'rgba(120,180,220,0.6)',inputId:'dial-5-input',enableClipboard:true})
 
 	</script>
 </body>

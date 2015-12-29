@@ -58,23 +58,26 @@ The first argument when instantiating TkAudial is its HTML container element. Th
 {
   type: (String) Either 'gain' or 'balance'. Default is gain,
   display: (String) Either 'notch' or 'fill'. Default is notch,
-  min: (Integer) Range start. Default is 0,
+  min: (Number) Range start. Default is 0,
   max: (Integer) Range end. Default is 100,
   step: (Integer) Legal interval. 0.01..n (values are rounded to two decimal places) Default is 1,
   value: (Integer) Initial value. Default is 50,
   borderColour: (String) Style value (EG white, #, rgb, rgba). Default is #545454,
-  borderWidth: (Integer) 0..15. Default is 8,
+  borderWidth: (Integer) Default is 8,
   indicatorBackgroundColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   indicatorColour: (String) Style value (EG white, #, rgb, rgba). Default is #888888,
-  indicatorWidth: (Integer) 5..20. Default is 15,
+  indicatorWidth: (Integer) Default is 15,
   valueBackgroundColour:  (String) Style value (EG white, #, rgb, rgba). Default is black,
   valueColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   valueFontSize: (String) Style value (EG 1.2em, 22px, 12pt, 90%). Default is 1em,
   inputId: (String) used for name and id of a hidden form input. Input is not generated if this option is omitted,
-  zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial. Default is false
+  zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial. Default is false,
+  enableClipboard: (Boolean) Add the control value to the clipboard when releasing a dial. Default is false
 }
 ```
 See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.
+
+Number type options are rounded to two decimal places. The initial value is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
 
 ## Events
 
@@ -94,10 +97,6 @@ See [Known Issues](#known-issues) for details regarding the *zeroModifiers* opti
 
 ## Pipeline
 
-> The value display will be given more options. The value won't be readable on smaller dials so a hover option will be introduced.
-
-<!-- -->
-
 > The modifiers still may not be sensitive enough in some cases. A control for Hz for example will typically range from 20..20000. The current modifiers seem ideal for smaller ranges so an additional option will soon be added so that all modifiers can be amplified to suit the range option and also the UI. This will also be implemented so that the dials can also be made less sensitive.
 
 ## Known issues
@@ -111,3 +110,7 @@ See [Known Issues](#known-issues) for details regarding the *zeroModifiers* opti
 <!-- -->
 
 > For touch devices, touch mashing, or perhaps a cpu struggling device, can result in the touch count getting out of sync. This seems to be rare though. This may be dealt with by setting the touch count for a dial to zero when it is released. The *zeroModifiers* options has been added for this purpose. If this option is set to true, modifiers would have to be re-applied before or during manipulation of a dial. If you suspect modifier count sync is proving to be an issue, this can be applied.
+
+<!-- -->
+
+> The clipboard library is [clipboard.js](https://zenorocha.github.io/clipboard.js/). Safari is not supported.

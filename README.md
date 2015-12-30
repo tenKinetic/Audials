@@ -59,14 +59,16 @@ The first argument when instantiating TkAudial is its HTML container element. Th
   type: (String) Either 'gain' or 'balance'. Default is gain,
   display: (String) Either 'notch' or 'fill'. Default is notch,
   min: (Number) Range start. Default is 0,
-  max: (Integer) Range end. Default is 100,
-  step: (Integer) Legal interval. 0.01..n (values are rounded to two decimal places) Default is 1,
-  value: (Integer) Initial value. Default is 50,
+  max: (Number) Range end. Default is 100,
+  step: (Number) Legal interval. 0.01..n (values are rounded to two decimal places) Default is 1,
+  sensitivityMultiplier: (Number) A global modifier unique to the individual control. Intended to make dials with very large or very small ranges more user friendly. Default is 1,
+  alwaysMultiply: (Boolean) If false the sensitivityMultiplier will only be applied if the user has activated a key or touch modifier. Default is true,
+  value: (Number) Initial value. Default is 50,
   borderColour: (String) Style value (EG white, #, rgb, rgba). Default is #545454,
-  borderWidth: (Integer) Default is 8,
+  borderWidth: (Number) Default is 8,
   indicatorBackgroundColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   indicatorColour: (String) Style value (EG white, #, rgb, rgba). Default is #888888,
-  indicatorWidth: (Integer) Default is 15,
+  indicatorWidth: (Number) Default is 15,
   valueBackgroundColour:  (String) Style value (EG white, #, rgb, rgba). Default is black,
   valueColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
   valueFontSize: (String) Style value (EG 1.2em, 22px, 12pt, 90%). Default is 1em,
@@ -77,7 +79,9 @@ The first argument when instantiating TkAudial is its HTML container element. Th
 ```
 See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.
 
-Number type options are rounded to two decimal places. The initial value is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
+Number type options are generally rounded to two decimal places. The initial value option is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
+
+Everything in the TkAudial object is public. Your application can read and write values for options at runtime to manipulate behavior if you wish. Note that this is untested territory and you need to make sure you supply valid values. Using *dial.setValue(value)* is preferable to setting dial.value as it will be rounded according to the current value for step for you. On that note, know that the value supplied when instantiating TkAudial is not saved to dial.options.value but to dial.options.
 
 ## Events
 
@@ -94,6 +98,14 @@ Number type options are rounded to two decimal places. The initial value is roun
 <!-- -->
 
 > Touch modifiers are slightly different. The sensitivity of the dial is multiplied by the number of touches detected. Modifier touches can be added while moving the dial by using your other hand for example. Touch modifiers are detected anywhere on the screen.
+
+<!-- -->
+
+> The *sensitivityMultiplier* option is applied by default. For large ranges this will result in a loss of precision. If this is deemed an issue then the *alwaysMultiply* option can be set to false in which case the *sensitivityMultiplier* is applied only when a key or touch modifier is active.
+
+<!-- -->
+
+> Use a *sensitivityMultiplier* of 0<n<1 for small ranges (EG 0.5; zero will effectively disable the control). This will increase the distance required to send the dial from its minimum to its maximum value. A *sensitivityMultiplier* greater than 1 will similarly decrease the distance required to send a small range dial from its minimum to its maximum value.
 
 ## Pipeline
 

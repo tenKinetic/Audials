@@ -49,7 +49,8 @@ A working implementation is provided in usage.html.
 
 The dials will scale to fill their container which should have the class *tk-audial*.
 
-You can use the ES6 version from the *build* folder or the ES5 version from the *es5* folder.
+~~You can use the ES6 version from the *build* folder or the ES5 version from the *build/es5* folder.~~
+Currently only the ES5 version is published.
 
 ## Options
 

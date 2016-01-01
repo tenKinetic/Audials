@@ -1,5 +1,6 @@
 <html>
 <head>
+	<script src="build/es5/traceur_runtime.js"></script>
 	<script src="build/es5/tk-audials.min.js"></script>
 	<link rel="stylesheet" media="all" href="build/tk-audials.min.css">
 	<style>
@@ -54,30 +55,31 @@
 		<div id="style-5" class="tk-audial"></div>
 	</div>
 	<script>
-		var gainNotch = document.querySelector('#gain-notch');
-		var balanceNotch = document.querySelector('#balance-notch');
-		var gainFill = document.querySelector('#gain-fill');
-		var balanceFill = document.querySelector('#balance-fill');
 
-		var gainNotchDial = new TkAudial(gainNotch);
-		var balanceNotchDial = new TkAudial(balanceNotch, {type:'balance',display:'notch',min:-50,max:50,value:12});
-		var gainFillDial = new TkAudial(gainFill, {type:'gain',display:'fill'});
-		var balanceFillDial = new TkAudial(balanceFill, {type:'balance',display:'fill',min:-50,max:50,value:12,inputId:'unique-id'});
+	var gainNotch = document.querySelector('#gain-notch');
+	var balanceNotch = document.querySelector('#balance-notch');
+	var gainFill = document.querySelector('#gain-fill');
+	var balanceFill = document.querySelector('#balance-fill');
 
-		var style1 = document.querySelector('#style-1');
-		var style1Dial = new TkAudial(style1, {type:'gain',display:'notch',min:0.8,max:6.3,step:0.1,value:120,sensitivityMultiplier:0.5,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'white',inputId:'dial-1-input'});
+	var gainNotchDial = new TkAudial(gainNotch);
+	var balanceNotchDial = new TkAudial(balanceNotch, {type:'balance',display:'notch',min:-50,max:50,value:12});
+	var gainFillDial = new TkAudial(gainFill, {type:'gain',display:'fill'});
+	var balanceFillDial = new TkAudial(balanceFill, {type:'balance',display:'fill',min:-50,max:50,value:12,inputId:'unique-id'});
 
-		var style2 = document.querySelector('#style-2');
-		var style2Dial = new TkAudial(style2, {type:'gain',display:'fill',min:20,max:20000,value:15000,sensitivityMultiplier:100,alwaysMultiply:false,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(255,100,180,0.5)',valueBackgroundColour:'white',valueColour:'rgba(255,100,180,0.5)',valueFontSize:'0.6em',inputId:'dial-2-input'});
+	var style1 = document.querySelector('#style-1');
+	var style1Dial = new TkAudial(style1, {type:'gain',display:'notch',min:0.8,max:6.3,step:0.1,value:120,sensitivityMultiplier:0.5,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'white',inputId:'dial-1-input'});
 
-		var style3 = document.querySelector('#style-3');
-		var style3Dial = new TkAudial(style3, {type:'balance',display:'notch',min:-50,max:60,step:4.9,value:0,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'orange	',indicatorColour:'yellow',valueBackgroundColour:'grey',valueColour:'rgba(255,255,255,0.85)',inputId:'dial-3-input',enableClipboard:true});
+	var style2 = document.querySelector('#style-2');
+	var style2Dial = new TkAudial(style2, {type:'gain',display:'fill',min:20,max:20000,value:15000,sensitivityMultiplier:100,alwaysMultiply:false,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(255,100,180,0.5)',valueBackgroundColour:'white',valueColour:'rgba(255,100,180,0.5)',valueFontSize:'0.6em',inputId:'dial-2-input'});
 
-		var style4 = document.querySelector('#style-4');
-		var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input',enableClipboard:true});
+	var style3 = document.querySelector('#style-3');
+	var style3Dial = new TkAudial(style3, {type:'balance',display:'notch',min:-50,max:60,step:4.9,value:0,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'orange	',indicatorColour:'yellow',valueBackgroundColour:'grey',valueColour:'rgba(255,255,255,0.85)',inputId:'dial-3-input',enableClipboard:true});
 
-		var style5 = document.querySelector('#style-5');
-		var style5Dial = new TkAudial(style5, {type:'gain',display:'fill',min:0,max:200,step:5,value:180,borderWidth:20,borderColour:'#dddddd',borderWidth:0,indicatorWidth:30,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(120,180,220,0.6)',valueBackgroundColour:'#dddddd',valueColour:'rgba(120,180,220,0.6)',inputId:'dial-5-input'})
+	var style4 = document.querySelector('#style-4');
+	var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input',enableClipboard:true});
+
+	var style5 = document.querySelector('#style-5');
+	var style5Dial = new TkAudial(style5, {type:'gain',display:'fill',min:0,max:200,step:5,value:180,borderWidth:20,borderColour:'#dddddd',borderWidth:0,indicatorWidth:30,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(120,180,220,0.6)',valueBackgroundColour:'#dddddd',valueColour:'rgba(120,180,220,0.6)',inputId:'dial-5-input'})
 
 	</script>
 </body>

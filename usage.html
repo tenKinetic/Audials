@@ -1,6 +1,5 @@
 <html>
 <head>
-	<script src="build/es5/traceur_runtime.js"></script>
 	<script src="build/es5/tk-audials.min.js"></script>
 	<link rel="stylesheet" media="all" href="build/tk-audials.min.css">
 	<style>
@@ -15,12 +14,20 @@
 </head>
 <body>
 	<div class="slider">
-		This (non working) range input takes up a bit of space:
+		This range input takes up a bit of space:
 		<div class="slider-labels">0<span>100</span></div>
 		<input id="slider-example" type="range" min="0" max="100"/>
 	</div>
 	<p>
-		These takes much less space, might look better and have four types. All of which fit in a similar space to the one above:
+		The TkAudial examples below take up much less space and have four types (so far). A few of which can fit in a similar
+		space to the one above (granted, it is a bit bigger than necessary).
+	</p>
+	<p>
+		A TkAudial can also be very easily styled using the options object.
+	</p>
+	<p>
+		The range input above uses the <i>setValue</i> method on the first dial below to control it very easily. Likewise, the dial
+		will control the range input by using the <i>changed</i> event that the dial generates on the container element.
 	</p>
 	<div class="panel">
 		<span>Gain-Notch:</span>
@@ -80,6 +87,16 @@
 
 	var style5 = document.querySelector('#style-5');
 	var style5Dial = new TkAudial(style5, {type:'gain',display:'fill',min:0,max:200,step:5,value:180,borderWidth:20,borderColour:'#dddddd',borderWidth:0,indicatorWidth:30,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(120,180,220,0.6)',valueBackgroundColour:'#dddddd',valueColour:'rgba(120,180,220,0.6)',inputId:'dial-5-input'})
+
+	var rangeInput = document.querySelector('#slider-example');
+	rangeInput.addEventListener('input', function(e)
+	{
+		gainNotchDial.setValue(this.value);
+	}, true);
+	gainNotch.addEventListener('changed', function(e)
+	{
+		rangeInput.value = e.detail;
+	});
 
 	</script>
 </body>

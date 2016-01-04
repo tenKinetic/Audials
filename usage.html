@@ -86,7 +86,7 @@
 	var style3Dial = new TkAudial(style3, {type:'balance',display:'notch',min:-50,max:60,step:4.9,value:0,borderWidth:0,indicatorWidth:25,indicatorBackgroundColour:'orange	',indicatorColour:'yellow',valueBackgroundColour:'grey',valueColour:'rgba(255,255,255,0.85)',inputId:'dial-3-input',enableClipboard:true});
 
 	var style4 = document.querySelector('#style-4');
-	var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input',enableClipboard:true});
+	var style4Dial = new TkAudial(style4, {type:'balance',display:'fill',min:-50,max:60,step:5,value:-25,borderWidth:20,borderColour:'rgba(120,180,220,0.6)',indicatorWidth:95,indicatorBackgroundColour:'#567b9a',valueBackgroundColour:'#a1abb4',valueColour:'rgba(0,0,0,0)',inputId:'dial-4-input',enableClipboard:true,hoverHTML:'$value Hz'});
 
 	var style5 = document.querySelector('#style-5');
 	var style5Dial = new TkAudial(style5, {type:'gain',display:'fill',min:0,max:200,step:5,value:180,borderWidth:20,borderColour:'#dddddd',borderWidth:0,indicatorWidth:30,indicatorBackgroundColour:'rgba(0,0,0,0)',indicatorColour:'rgba(120,180,220,0.6)',valueBackgroundColour:'#dddddd',valueColour:'rgba(120,180,220,0.6)',inputId:'dial-5-input'})

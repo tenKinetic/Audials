@@ -80,6 +80,8 @@ The first argument when instantiating TkAudial is its HTML container element. Th
 ```
 See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.
 
+Dial element colours are null by default to allow them to be defined in CSS. Styles specified in the options object will become inline styles.
+
 Number type options are generally rounded to two decimal places. The initial value option is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
 
 Everything in the TkAudial object is public. Your application can read and write values for options at runtime to manipulate behavior if you wish. Note that this is untested territory and you need to make sure you supply valid values. Using *dial.setValue(value)* is preferable to setting dial.value as it will be rounded according to the current value for step for you. On that note, know that the value supplied when instantiating TkAudial is not saved to dial.options.value but to dial.options.
@@ -111,6 +113,10 @@ Everything in the TkAudial object is public. Your application can read and write
 ## Pipeline
 
 > Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop.
+
+<!-- -->
+
+> Indicators were originally plain arcs obscured by the value background. The notch style indicator has been updated to render only where it should display rather than a much longer line from the centre of the dial. Next job is to do the same with fill style indicators.
 
 ## Known issues
 

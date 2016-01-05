@@ -13,6 +13,8 @@
 	.slider input {width:100%;}
 	.slider .slider-labels span {float:right;}
 	p {margin:15px 0;width:510px;color:#666666;}
+
+	#gain-notch svg circle.value-background {background-color:blue;}
 	</style>
 </head>
 <body>
@@ -26,11 +28,11 @@
 		space to the one above (granted, it is a bit bigger than necessary).
 	</p>
 	<p>
-		A TkAudial can also be very easily styled using the options object.
+		A TkAudial can also be very easily styled using the options object or CSS.
 	</p>
 	<p>
 		The range input above uses the <i>setValue</i> method on the first dial below to control it very easily. Likewise, the dial
-		will control the range input by using the <i>changed</i> event that the dial generates on the container element.
+		will control the range input by using the <i>changed</i> event that the dial generates on its container element.
 	</p>
 	<div class="panel">
 		<span>Gain-Notch:</span>

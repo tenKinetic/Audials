@@ -65,13 +65,13 @@ The first argument when instantiating TkAudial is its HTML container element. Th
   sensitivityMultiplier: (Number) A global modifier unique to the individual control. Intended to make dials with very large or very small ranges more user friendly. Default is 1,
   alwaysMultiply: (Boolean) If false the sensitivityMultiplier will only be applied if the user has activated a key or touch modifier. Default is true,
   value: (Number) Initial value. Default is 50,
-  borderColour: (String) Style value (EG white, #, rgb, rgba). Default is #545454,
+  borderColour: (String) Style value (EG white, #, rgb, rgba). Default is null,
   borderWidth: (Number) Default is 8,
-  indicatorBackgroundColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
-  indicatorColour: (String) Style value (EG white, #, rgb, rgba). Default is #888888,
+  indicatorBackgroundColour: (String) Style value (EG white, #, rgb, rgba). Default is null,
+  indicatorColour: (String) Style value (EG white, #, rgb, rgba). Default is null,
   indicatorWidth: (Number) Default is 15,
-  valueBackgroundColour:  (String) Style value (EG white, #, rgb, rgba). Default is black,
-  valueColour: (String) Style value (EG white, #, rgb, rgba). Default is white,
+  valueBackgroundColour:  (String) Style value (EG white, #, rgb, rgba). Default is null,
+  valueColour: (String) Style value (EG white, #, rgb, rgba). Default is null,
   valueFontSize: (String) Style value (EG 1.2em, 22px, 12pt, 90%). Default is 1em,
   inputId: (String) used for name and id of a hidden form input. Input is not generated if this option is omitted,
   zeroModifiers: (Boolean) Set touch modifier count to zero when releasing a dial. Default is false,
@@ -80,7 +80,7 @@ The first argument when instantiating TkAudial is its HTML container element. Th
 ```
 See [Known Issues](#known-issues) for details regarding the *zeroModifiers* option.
 
-Dial element colours are null by default to allow them to be defined in CSS. Styles specified in the options object will become inline styles.
+Dial element colours are null by default to allow them to be defined in CSS. Any styles specified in the options object will become inline styles.
 
 Number type options are generally rounded to two decimal places. The initial value option is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
 
@@ -113,10 +113,6 @@ Everything in the TkAudial object is public. Your application can read and write
 ## Pipeline
 
 > Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop.
-
-<!-- -->
-
-> Indicators were originally plain arcs obscured by the value background. The notch style indicator has been updated to render only where it should display rather than a much longer line from the centre of the dial. Next job is to do the same with fill style indicators.
 
 ## Known issues
 

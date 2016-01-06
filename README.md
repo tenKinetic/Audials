@@ -112,7 +112,11 @@ Everything in the TkAudial object is public. Your application can read and write
 
 ## Pipeline
 
-> Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop.
+> Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop. UPDATE: Double click has been implemented for paste-to-dial. This will be considered complete when tested on touch devices. *setValue* currently adheres to the *min* and *max* options however, when pasting, this may be better if *setValue* aborts for invalid values. Maybe. Dunno.
+
+<!-- -->
+
+> Hover was added as an option when not displaying a value on a dial. This needs a touch alternative.
 
 ## Known issues
 

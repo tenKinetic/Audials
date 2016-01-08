@@ -82,6 +82,8 @@ See [Known Issues](#known-issues) for details regarding the *zeroModifiers* opti
 
 Dial element colours are null by default to allow them to be defined in CSS. Any styles specified in the options object will become inline styles.
 
+If the *hoverHTML* options is non-null then this HTML will display when hovering and modifying the dial. Use *$value* within the HTML to inject the dials value. On touch devices the *hoverHTML* will display once modification of the dial occurs.
+
 Number type options are generally rounded to two decimal places. The initial value option is rounded to the nearest valid step (and also the same number of decimal places as the step provided). If your minimum and maximum values don't match the step the final step will be reduced.
 
 Everything in the TkAudial object is public. Your application can read and write values for options at runtime to manipulate behavior if you wish. Note that this is untested territory and you need to make sure you supply valid values. Using *dial.setValue(value)* is preferable to setting dial.value as it will be rounded according to the current value for step for you. On that note, know that the value supplied when instantiating TkAudial is not saved to dial.options.value but to dial.options.
@@ -114,10 +116,6 @@ Everything in the TkAudial object is public. Your application can read and write
 
 > Looking into an intuitive way to copy and paste values between dials. Copy is done by the inclusion of clipboard.js. An intuitive way to indicate you want to paste a value to a control is required. Particularly on touch, a key modifier will be easy enough for desktop. UPDATE: Double click has been implemented for paste-to-dial. This will be considered complete when tested on touch devices. *setValue* currently adheres to the *min* and *max* options however, when pasting, this may be better if *setValue* aborts for invalid values. Maybe. Dunno.
 
-<!-- -->
-
-> Hover was added as an option when not displaying a value on a dial. This needs a touch alternative.
-
 ## Known issues
 
 > Selection of the control value as text when the control is not in use proved flaky. Especially in Safari. To select the text value of the control, start the selection outside the control. This works well enough on desktop. On iOS text selection causes a slight issue. Just touch and hold to select the text, this is fine. Starting the dial manipulation from the text though doesn't seem to set the text as non-selectable as well as desktop does. In this case the dial needs to be manipulated by its edges. Text selection is probably not particularly useful and this may soon all be avoided by have the control non-selectable at all times.
@@ -133,3 +131,7 @@ Everything in the TkAudial object is public. Your application can read and write
 <!-- -->
 
 > The clipboard library is [clipboard.js](https://zenorocha.github.io/clipboard.js/). Safari is not supported.
+
+<!-- -->
+
+> enabling the clipboard causes zoom issues for iOS. Hover display on dial modification doesn't follow the gesture well either. Fix is in progress.

@@ -90,7 +90,11 @@ Everything in the TkAudial object is public. Your application can read and write
 
 ## Events
 
-> When the value is changed the *changed* event is triggered by the container (that is passed as he first argument to TkAudial).
+> When the value is changed the *changed* event is emitted by the container (that is passed as he first argument to TkAudial). A *changed* event is also emitted by the TkAudial class itself and can be subscribed to. The *addEventListener* method of the TkAudial object uses only the event name and callback parameters (*useCapture* is not required nor is it used if specified). These events are not triggered by setValue.
+
+<!-- -->
+
+> The *changed* event on the DOM container object may be removed in the future.
 
 ## Methods
 

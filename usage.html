@@ -105,6 +105,12 @@
 		rangeInput.value = e.detail;
 	});
 
+	gainNotchDial.addEventListener('changed', function(e)
+	{
+		console.log('TkAudial event triggered with object: ' + JSON.stringify(e));
+		// do something with e.value
+	});
+
 	</script>
 </body>
 </html>
